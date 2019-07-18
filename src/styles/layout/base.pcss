@@ -1,5 +1,6 @@
 html {
   scroll-behavior: smooth;
+
   @include desktop {
     font-size: 15px;
   }
@@ -21,7 +22,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: $text-color;
-  
+
 }
 
 .wrapper {
@@ -36,10 +37,6 @@ body {
   width: 95%;
 }
 
-
-//section {
- //
-//}
 
 button {
   border: 0;
@@ -74,11 +71,11 @@ p {
 
 button[type="button"] {
   cursor: pointer;
-  background-color: transparent;
+  background-color: $btn-color;
 }
 
 a {
-  color: $link-color;
+  color: $links-color;
   cursor: pointer;
 }
 
