@@ -11,3 +11,67 @@ html(lang="en")
     .wrapper <!-- overflow cut -->
       .maincontent
         include /sections/header.pug
+        section.hero
+          .container
+            header.section-head Lorem Ipsum
+            .hero__content              
+              article.hero__article
+                .about
+                  h3.article-head About
+                  p.about-text Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laboriosam dignissimos corporis nostrum expedita consequuntur natus veniam esse. Consectetur, consequatur repellat. Voluptatibus dolorum facere voluptate vel maiores deleniti eius voluptatum! Consectetur! Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque minima necessitatibus adipisci laboriosam iure et sapiente odit, sequi ex velit repellendus a! Provident perferendis optio sit cumque, vero corrupti assumenda? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta laboriosam beatae id harum assumenda, hic aliquid consectetur optio distinctio est quaerat. Eum deleniti quibusdam a doloribus modi et vero at?
+                .focus
+                  h3.article-head Area of Focus
+                  ul.focus__list
+                    - 
+                      var focuses= [
+                        {
+                            name: 'Economy, Politics & Enviroment',
+                            icon: 'internet'
+                        },{
+                            name: 'Health & Culture',
+                            icon: 'handshake'
+                        },{   
+                            name: 'Publick Administration & Non-Profit',
+                            icon: 'culture'
+                        }             
+                      ]
+                    each focus in focuses
+                      li.focus__item
+                        div(
+                        class=`focus__item--${focus.icon}`
+                        ).focus__item-icon
+                          +icon(`${focus.icon}`, `focus__item-pic `)
+                        h4.focus__item-text #{focus.name}
+              aside.aside
+                .manager
+                  h3.article-head Contact                  
+                  .manager__avatar
+                    .manager__avatar-image
+                      +image('gosling.jpg', 'manager__avatar-pic')
+                    ul.manager__avatar-list
+                      li.manager__avatar-item
+                        h5.manager__avatar-name Ivan Ivanov
+                      li.manager__avatar-item
+                        a.manager__avatar-email ivan@mail.ru
+                .socials
+                  h3.article-head.article-head--socials Follow us
+                  ul.socials__list
+                    - 
+                      var socials= [
+                        {
+                            name: 'website',
+                            link: 'lorem.com',
+                            icon: 'web'
+                        },{
+                            name: 'linkedin',
+                            link: 'linkedin.com/lorem',
+                            icon: 'in'                            
+                        }         
+                      ]
+                    each social in socials
+                      li.socials__item
+                        .socials__item-icon
+                          +icon(`${social.icon}`, `socials__item-pic`)
+                        a(
+                          href=`http://www.${social.link}`
+                        ).socials__item-link #{social.link}
