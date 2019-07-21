@@ -3,24 +3,43 @@
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
+
+  @include phones {
+    position: relative;
+  }
 }
 
 .good__head {
   display: flex;
   margin-bottom: 18px;
+
+  @include phones {
+    margin-bottom: 6px;
+  }
 }
 
 .good__head-avatar {
   height: 80px;
   margin-right: 20px;
+
+  @include phones {
+    margin-right: 6px;
+    height: 68px;
+  }
 }
 
 .good__head-pic {
   margin: 0;
-} 
+}
 
 .good__head-name {
+  color: $text-color-head;
+  letter-spacing: -0.5px;
   font-size: 23px;
+
+  @include phones {
+    font-size: 21px;
+  }
 }
 
 .good__by {
@@ -42,10 +61,18 @@
 .good__text {
   margin-bottom: 12px;
   line-height: 1.5;
+
+  @include phones {
+    display: none;
+  }
 }
 
 .good__format {
   margin-bottom: 12px;
+
+  @include phones {
+    display: none;
+  }
 }
 
 .good__format-head {
@@ -70,6 +97,10 @@
   font-weight: 600;
   box-sizing: border-box;
   margin-bottom: 18px;
+  @include phones {
+    margin-bottom: 0;
+    padding: 0px 4px;
+  }
 }
 
 .good__character-text {
@@ -78,15 +109,29 @@
 
 .good__downrow {
   text-align: right;
+
+  @include phones {
+    position: absolute;
+    bottom: 6px;
+    right: 6px;
+  }
 }
 
 .good__downrow__head {
   font-size: 36px;
   line-height: 1.1em;
+  color: $text-color-head;
+  @include phones {
+    font-size: 21px;
+  }
 }
 
 .good__downrow__conditions {
   margin-bottom: 12px;
+
+  @include phones {
+    display: none;
+  }
 }
 
 .good__downrow-details {
@@ -95,10 +140,9 @@
   font-size: 18px;
   color: #fff;
   font-weight: 600;
-}
+  background: $btn-color;
 
-
-
-.temp {
-  height: 100vh;
+  @include phones {
+    display: none;
+  }
 }

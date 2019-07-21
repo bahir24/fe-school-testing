@@ -1,0 +1,74 @@
+section.goods  
+  .goods__head
+    .container
+      header.section-head.section-head--goods Lorem of Lorem Ipsum
+      nav.search
+        label.search__field
+          button(
+            type="submit"
+          ).search__field-button 
+            +icon('search', 'search__field-pic')                    
+          input(
+            type="search"
+            placeholder="Search"
+            name="search"
+          ).search__field-input
+  .goods__content
+    .container
+      ul.goods__list
+        .container
+        - 
+          var goods= [
+            {
+                name: 'Lorem Ipsum Dolor',
+                image: 'item-logo.png',
+                by: '',
+                text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ex quis, illum sunt quod beatae alias',
+                format: '',
+                character: 'Public',
+                head: 'Lorem',
+                conditions: 'No fees & no time restrictions'
+            },{
+                name: 'Lorem Ipsum Dolor',
+                image: 'item-logo.png',
+                by: 'Lorem ipsum',
+                text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ex quis, illum sunt quod beatae alias',
+                format: 'scv',
+                character: 'Public',
+                head: 'Lorem',
+                conditions: 'No fees & no time restrictions'
+            },{   
+                name: 'Lorem Ipsum Dolor',
+                image: 'item-logo.png',
+                by: 'Lorem ipsum',
+                text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ex quis, illum sunt quod beatae alias',
+                format: 'csv',
+                character: 'Open',
+                head: 'Lorem',
+                conditions: 'No fees & no time restrictions'
+            }             
+          ]
+        each good in goods
+          li.goods__item
+            .good
+              .good__uprow
+                .good__head
+                  .good__head-avatar
+                    +image(`${good.image}`, 'good__head-pic')
+                  h4.good__head-name #{good.name}
+                if good.by!= ""
+                  .good__by
+                    h6.good__by-head Lorem by
+                    p.good__by-text #{good.by}
+                p.good__text #{good.text}
+                if good.format!= ""
+                  .good__format
+                    h6.good__format-head Format
+                    p.good__format-data #{good.format}
+                if good.character!= ""                   
+                  .good__character
+                    p.good__character-text #{good.character}
+              .good__downrow
+                h3.good__downrow__head #{good.head}
+                h6.good__downrow__conditions #{good.conditions}
+                button.good__downrow-details View details...       

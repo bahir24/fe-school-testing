@@ -1,5 +1,9 @@
 .goods {
   background: rgb(245, 245, 245);
+
+  @include phones {
+    height: 100vh;
+  }
 }
 
 .goods__head {
@@ -8,6 +12,14 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @include phones {
+    padding: 18px 0;
+    margin: 0;
+    background-color: #fff;
+    border-top: 1px solid rgb(231, 231, 231);
+    border-bottom: 1px solid rgb(231, 231, 231);
+  }
 }
 
 .goods__list {
@@ -15,10 +27,24 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: 48px;
+  @include phones {
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 9px 0;
+    margin-bottom: 0;
+  }
 }
 
 .goods__item {
   width: 31.5%;
   background: #fff;
   padding: 24px;
+
+  @include phones {
+    width: 100%;
+    flex: 1;
+    padding: 12px;
+    height: 30%;
+    margin-bottom: 3%;
+  }
 }

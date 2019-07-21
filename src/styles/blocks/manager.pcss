@@ -1,7 +1,9 @@
 .manager {
   margin-bottom: 43px;
+  @include phones {
+    margin-bottom: 48px;
+  }
 }
-
 
 .manager__avatar {
   display: flex;
@@ -20,8 +22,6 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  // padding: 6px;
-
 }
 
 .manager__avatar-item {
