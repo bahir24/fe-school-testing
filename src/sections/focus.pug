@@ -1,0 +1,23 @@
+.focus
+  h3.article-head Area of Focus
+  ul.focus__list
+    - 
+      var focuses= [
+        {
+            name: 'Economy, Politics & Enviroment',
+            icon: 'internet'
+        },{
+            name: 'Health & Culture',
+            icon: 'handshake'
+        },{   
+            name: 'Publick Administration & Non-Profit',
+            icon: 'culture'
+        }             
+      ]
+    each focus in focuses
+      li.focus__item
+        div(
+        class=`focus__item--${focus.icon}`
+        ).focus__item-icon
+          +icon(`${focus.icon}`, `focus__item-pic `)
+        h4.focus__item-text #{focus.name}

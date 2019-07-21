@@ -16,62 +16,74 @@ html(lang="en")
             header.section-head Lorem Ipsum
             .hero__content              
               article.hero__article
-                .about
-                  h3.article-head About
-                  p.about-text Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laboriosam dignissimos corporis nostrum expedita consequuntur natus veniam esse. Consectetur, consequatur repellat. Voluptatibus dolorum facere voluptate vel maiores deleniti eius voluptatum! Consectetur! Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque minima necessitatibus adipisci laboriosam iure et sapiente odit, sequi ex velit repellendus a! Provident perferendis optio sit cumque, vero corrupti assumenda? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta laboriosam beatae id harum assumenda, hic aliquid consectetur optio distinctio est quaerat. Eum deleniti quibusdam a doloribus modi et vero at?
-                .focus
-                  h3.article-head Area of Focus
-                  ul.focus__list
-                    - 
-                      var focuses= [
-                        {
-                            name: 'Economy, Politics & Enviroment',
-                            icon: 'internet'
-                        },{
-                            name: 'Health & Culture',
-                            icon: 'handshake'
-                        },{   
-                            name: 'Publick Administration & Non-Profit',
-                            icon: 'culture'
-                        }             
-                      ]
-                    each focus in focuses
-                      li.focus__item
-                        div(
-                        class=`focus__item--${focus.icon}`
-                        ).focus__item-icon
-                          +icon(`${focus.icon}`, `focus__item-pic `)
-                        h4.focus__item-text #{focus.name}
+                include /sections/about.pug
+                include /sections/focus.pug
               aside.aside
-                .manager
-                  h3.article-head Contact                  
-                  .manager__avatar
-                    .manager__avatar-image
-                      +image('gosling.jpg', 'manager__avatar-pic')
-                    ul.manager__avatar-list
-                      li.manager__avatar-item
-                        h5.manager__avatar-name Ivan Ivanov
-                      li.manager__avatar-item
-                        a.manager__avatar-email ivan@mail.ru
-                .socials
-                  h3.article-head.article-head--socials Follow us
-                  ul.socials__list
-                    - 
-                      var socials= [
-                        {
-                            name: 'website',
-                            link: 'lorem.com',
-                            icon: 'web'
-                        },{
-                            name: 'linkedin',
-                            link: 'linkedin.com/lorem',
-                            icon: 'in'                            
-                        }         
-                      ]
-                    each social in socials
-                      li.socials__item
-                        .socials__item-icon
-                          +icon(`${social.icon}`, `socials__item-pic`)
-                        a(
-                          href=`http://www.${social.link}`
-                        ).socials__item-link #{social.link}
+                include /sections/manager.pug
+                include /sections/socials.pug
+        section.goods
+          .container
+            .goods__head
+              header.section-head Lorem of Lorem Ipsum
+              nav.search
+                label.search__field
+                  button(
+                    type="submit"
+                  ).search__field-button 
+                    +icon('search', 'search__field-pic')                    
+                  input(
+                    type="search"
+                    placeholder="Search"
+                    name="search"
+                  ).search__field-input
+            ul.goods__list
+              - 
+                var goods= [
+                  {
+                      name: 'Lorem Ipsum',
+                      image: 'item-logo.png',
+                      by: '',
+                      text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ex quis, illum sunt quod beatae alias consequuntur ipsam consectetur',
+                      format: '',
+                      character: 'Public',
+                      head: 'Lorem',
+                      conditions: 'No fees & no time restrictions'
+                  },{
+                      name: 'Lorem Ipsum',
+                      image: 'item-logo.png',
+                      by: 'Lorem ipsum',
+                      text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ex quis, illum sunt quod beatae alias consequuntur ipsam consectetur',
+                      format: 'scv',
+                      character: 'Public',
+                      head: 'Lorem',
+                      conditions: 'No fees & no time restrictions'
+                  },{   
+                      name: 'Lorem Ipsum',
+                      image: 'item-logo.png',
+                      by: 'Lorem ipsum',
+                      text: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ex quis, illum sunt quod beatae alias consequuntur ipsam consectetur',
+                      format: 'csv',
+                      character: 'Open',
+                      head: 'Lorem',
+                      conditions: 'No fees & no time restrictions'
+                  }             
+                ]
+              each good in goods
+                li.goods__item
+                  .good
+                    .good__head
+                      .good__head-avatar
+                        +image(`${good.image}`, 'good__head-pic')
+                      h4.good__head-name #{good.name}
+                    if good.by!= ""
+                      .good__by
+                        h6.good__by-head Lorem by
+                        p.good__by-text #{good.by}
+                    p.good__text #{good.text}
+                    if good.format!= ""
+                      p.good__format Format #{good.format}                    
+                    .good__character
+                      p.good__character #{good.character}
+                    h3.good__head #{good.head}
+                    h6.good__conditions #{good.conditions}
+                    button.good__details View details

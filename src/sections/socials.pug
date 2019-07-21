@@ -1,0 +1,22 @@
+.socials
+  h3.article-head.article-head--socials Follow us
+  ul.socials__list
+    - 
+      var socials= [
+        {
+            name: 'website',
+            link: 'lorem.com',
+            icon: 'web'
+        },{
+            name: 'linkedin',
+            link: 'linkedin.com/lorem',
+            icon: 'in'                            
+        }         
+      ]
+    each social in socials
+      li.socials__item
+        .socials__item-icon
+          +icon(`${social.icon}`, 'socials__item-pic')
+        a(
+          href=`http://www.${social.link}`
+        ).socials__item-link #{social.link}

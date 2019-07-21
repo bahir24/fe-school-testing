@@ -1,3 +1,8 @@
+.focus {
+  padding-top: 9px;
+}
+
+
 .focus__list {
   display: flex;
   flex-wrap: wrap;
@@ -9,6 +14,8 @@
   margin-right: 12px;
   margin-bottom: 12px;
   background-color: rgb(248, 248, 248);
+  justify-content: center;
+  align-items: center;
 
   &--internet {
     background: $economy-icon;
@@ -25,13 +32,17 @@
 
 
 .focus__item-icon {
-  height: 18px;
-  width: 18px;
+  height: 30px;
+  width: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .focus__item-pic {
   fill: #fff;
-
+  height: 18px;
+  width: 18px;
 }
 
 .focus__item-text {
