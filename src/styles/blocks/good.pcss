@@ -1,16 +1,11 @@
-// .good {
-//   display: flex;
-// }
-
 .good__list {
   display: flex;
   flex-direction: column;
-  // flex-wrap: wrap;
-  // align-items: flex-start;
-  // align-content: flex-start;
   height: 100%;
-  li {
-    width: 100%;
+
+  @include phones {
+    flex-direction: row;
+    flex-wrap: wrap;
   }
 }
 
@@ -19,7 +14,8 @@
   margin-bottom: 18px;
 
   @include phones {
-    margin-bottom: 6px;
+    margin-bottom: 10px;
+    width: 100%;
   }
 }
 
@@ -29,13 +25,13 @@
   margin-right: 20px;
 
   @include phones {
-    margin-right: 6px;
+    margin-right: 9px;
     height: 68px;
+    width: 68px;
   }
 }
 
 .good__head-pic {
-  
   margin: 0;
   border-radius: 5%;
 }
@@ -48,23 +44,39 @@
 
   @include phones {
     font-size: 21px;
+    letter-spacing: -0.5px;
+    max-width: 70%;
   }
 }
 
 .good__by {
   margin-bottom: 18px;
+
+  @include phones {
+    width: 100%;
+  }
 }
 
 .good__by-head {
   display: inline;
   font-size: 18px;
   margin-right: 6px;
+
+  @include phones {
+    font-size: 12px;
+    height: 1em;
+  }
 }
 
 .good__by-text {
   display: inline;
   font-size: 18px;
   font-weight: 600;
+
+  @include phones {
+    font-size: 12px;
+    height: 1em;
+  }
 }
 
 .good__description-text {
@@ -89,6 +101,7 @@
   display: inline-block;
   margin-right: 10px;
   font-weight: 600;
+
   &:after {
     content: ':'
   }
@@ -102,6 +115,14 @@
 
 .good__character {
   margin-bottom: auto;
+
+  @include phones {
+    margin-bottom: 0;
+    margin-top: auto;
+    display: inline;
+    width: max-content;
+    margin-right: auto;
+  }
 }
 
 .good__character-text {
@@ -114,17 +135,23 @@
   font-weight: 600;
   box-sizing: border-box;
   margin-bottom: 18px;
+
   @include phones {
+    width: unset;
     margin-bottom: 0;
-    padding: 0px 4px;
+    padding: 1px 4px;
+    font-size: 13px;
   }
-  
+
 }
 
 .good__price {
   text-align: right;
+
   @include phones {
-    // position: absolute;
+    margin-top: auto;
+    display: inline;
+    width: max-content;
     bottom: 6px;
     right: 6px;
   }
@@ -134,6 +161,7 @@
   font-size: 36px;
   line-height: 1.1em;
   color: $text-color-head;
+
   @include phones {
     font-size: 21px;
   }
@@ -141,7 +169,6 @@
 
 .good__cond {
   margin-bottom: 12px;
-  // align-self: flex-end;
 
   @include phones {
     display: none;
@@ -150,7 +177,6 @@
 
 .good__cond-text {
   width: 100%;
-  // padding: 10px;
   font-size: 18px;
   font-size: 12px;
   text-align: right;
@@ -161,8 +187,11 @@
 }
 
 .good__send {
-  // align-self: flex-end;
   width: 100%;
+
+  @include phones {
+    display: none;
+  }
 }
 
 .good__send-button {
@@ -170,7 +199,11 @@
   width: 100%;
   background: $btn-color;
   padding: 10px;
-  font-weight: 500;
+  font-weight: 600;
   color: #fff;
   border-radius: 4px;
+}
+
+.temp {
+  height: 100vh;
 }

@@ -1,0 +1,25 @@
+.good
+  ul.good__list
+    li.good__head
+      .good__head-avatar
+        +image(`${good.image}`, 'good__head-pic', 'good-photo')
+      h4.good__head-name #{good.name}
+    if good.by!== ''
+      li.good__by
+        h6.good__by-head Lorem by
+        p.good__by-text #{good.by}
+    li.good__description
+      p.good__description-text #{good.text}
+    if good.format!== '' 
+      li.good__format
+        h6.good__format-head Format
+        p.good__format-text #{good.format}
+    if good.character!= ""
+      li.good__character
+          p.good__character-text #{good.character}
+    li.good__price
+      p.good__price-text #{good.price}
+    li.good__cond
+      p.good__cond-text #{good.cond}
+    li.good__send
+      button.good__send-button View Details...
